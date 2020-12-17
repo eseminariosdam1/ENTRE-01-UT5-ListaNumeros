@@ -3,7 +3,7 @@
  * La clase representa a una lista de 
  * números enteros
  * 
- * @author - 
+ * @author - Eneko Seminario
  * 
  */
 import java.util.Arrays;
@@ -11,6 +11,9 @@ import java.util.Arrays;
 public class ListaNumeros 
 {
     // definir atributos
+    int [] listaNumeros;
+    int pos;
+   
 
     /**
      * Constructor de la clase ListaNumeros 
@@ -20,6 +23,8 @@ public class ListaNumeros
      * @param n el tamaño máximo de la lista
      */
     public ListaNumeros(int n) {
+        listaNumeros = new int[n]; 
+        pos = 0;
          
     }
 
