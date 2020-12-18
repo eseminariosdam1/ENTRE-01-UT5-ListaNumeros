@@ -36,18 +36,24 @@ public class ListaNumeros
      * @return true si se ha podido añadir, false en otro caso
      */
     public boolean addElemento(int numero) {
-        
-        
-        return true;
-
-    }
+    if(!estaCompleta()){
+            for(int i = pos; i > 0; i--){
+                listaNumeros[i] = listaNumeros[i - 1];
+            }
+            listaNumeros[0] = numero;
+            pos++;
+            return true;
+                }
+            return false;
+}
 
     /**
      * devuelve true si la lista está completa, false en otro caso
      * Hacer sin if
      */
     public boolean estaCompleta() {
-         return true;
+         
+        return listaNumeros.length == pos;
 
     }
 
@@ -56,14 +62,14 @@ public class ListaNumeros
      * Hacer sin if
      */
     public boolean estaVacia() {
-         return true;
+         return listaNumeros.length == 0;
     }
 
     /**
      * devuelve el nº de elementos realmente guardados en la lista
      */
     public int getTotalNumeros() {
-        return 0;
+        return pos;
 
     }
 
@@ -71,9 +77,12 @@ public class ListaNumeros
      * Vacía la lista
      */
     public void vaciarLista() {
-         
-    }
-    
+         for (int i = pos - 1; i >= 0; i--) {
+          listaNumeros[i] = 0;
+               
+}
+}
+   
      /**
      * Representación textual de la lista de la forma indicada 
      * (leer enunciado)
