@@ -36,7 +36,7 @@ public class ListaNumeros
      * @return true si se ha podido añadir, false en otro caso
      */
     public boolean addElemento(int numero) {
-    if(!estaCompleta()){
+        if(!estaCompleta()){
             for(int i = pos; i > 0; i--){
                 listaNumeros[i] = listaNumeros[i - 1];
             }
@@ -90,12 +90,20 @@ public class ListaNumeros
      * Si la lista está vacía devuelve ""
      */
     public String toString() {
-         
+                String str = "";
+        if (!estaVacia()){
+            for (int i = 0; i < listaNumeros.length; i++){
+                str += String.format("%8d", listaNumeros[i]);
+            }
+            str += "\n";
+            for (int i = 0; i < listaNumeros.length; i++){
+                str+= String.format("%8d", i);
+            }
+            return str;
+        }
         return "";
     }
-    
-    
-
+            
     /**
      * Mostrar en pantalla la lista
      */
@@ -110,9 +118,11 @@ public class ListaNumeros
      *  
      */
     public int[] buscarPosicionesDe(int numero) {
-         
-        return null;
-
+    
+    
+    return null;
+    
+    
     }
 
     /**
