@@ -121,7 +121,7 @@ public class ListaNumeros
         int [] posicionesDeNumero = new int [listaNumeros.length];
         int contador = 0;
         for(int i = 0; i <= pos; i++){
-            if(listaNumeros[i] == numero){
+            if(numero == listaNumeros[i] ){
                 posicionesDeNumero[contador] = i;
                 contador++;
             }
@@ -142,8 +142,15 @@ public class ListaNumeros
      * 
      */
     public int buscarBinario(int numero) {
-        
-        return 0;
+         int [] copiaListaNumeros = new int [listaNumeros.length];
+         System.arraycopy(listaNumeros, 0, copiaListaNumeros, 0,  numero);
+         Arrays.sort(copiaListaNumeros);
+         int posicionDeNumero = Arrays.binarySearch(copiaListaNumeros, numero);
+         if(posicionDeNumero >= 0){
+            return posicionDeNumero;
+            }else
+            
+            return -1;
     }
 
    
@@ -211,7 +218,26 @@ public class ListaNumeros
         System.out.println(lista.toString());
         System.out.println("\t" + numero + " aparece en posiciones ");
         // seguir completando
-         
-
-    }
+        
+        int[] posicionBuscada = lista.buscarPosicionesDe(numero);
+        for(int i = 0; i < posicionBuscada.length; i++){
+            System.out.print(posicionBuscada[i]);
+        }
+        System.out.println();
+        
+        System.out.println("--- buscarBinario() ---");
+        if(lista.buscarBinario(numero) >= 0){
+            System.out.println("El numero solicitado aparece en la lista");
+        }else{
+            System.out.println("El numero solicitado no aparece en la lista");
+        }
+        System.out.println();
+        
+        
+        
+        
+        
 }
+    
+}
+
