@@ -147,10 +147,19 @@ public class ListaNumeros
     /**
      * borra el primer elemento de la lista
      */
-    public void borrarPrimero() {
-         
-
+    public void borrarPrimero(){
+        int numero = 0;
+       
+        if (numero >= 0 && numero < pos) {
+            for (int i = numero + 1; i < pos; i++){
+            listaNumeros[i - 1] = listaNumeros[i];
+            }
+            pos++;
+        } 
     }
+         
+ 
+ 
     
      /**
      *  Invierte cada uno de los grupos de n elementos que hay en lista
