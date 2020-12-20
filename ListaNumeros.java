@@ -118,12 +118,17 @@ public class ListaNumeros
      *  
      */
     public int[] buscarPosicionesDe(int numero) {
-    
-    
-    return null;
-    
-    
-    }
+        int [] posicionesDeNumero = new int [listaNumeros.length];
+        int contador = 0;
+        for(int i = 0; i <= pos; i++){
+            if(listaNumeros[i] == numero){
+                posicionesDeNumero[contador] = i;
+                contador++;
+            }
+        }
+        return posicionesDeNumero;
+    } 
+
 
     /**
      * Hace una búsqueda binaria del numero indicado devolviendo -1 si no se
@@ -137,9 +142,8 @@ public class ListaNumeros
      * 
      */
     public int buscarBinario(int numero) {
- 
+        
         return 0;
-
     }
 
    
