@@ -195,8 +195,18 @@ public class ListaNumeros
      * 
      */
     public int[][] toArray2D() {
-        
-        return null;
+        int [][] raggedArray = new int [listaNumeros.length][];
+        for(int i = 0; i < listaNumeros.length; i++){
+            raggedArray[i] = new int [i + 1];
+            raggedArray[i][raggedArray.length - 1] = 1;
+            raggedArray[i][0] = 1;
+            for(int j = 0; j < listaNumeros.length; j++){
+                raggedArray[i][j + 1] = raggedArray[i -1][j] + raggedArray [i - 1][j + 1];
+                
+            }
+            
+        }
+        return raggedArray;
     }
 
     /**
@@ -233,7 +243,18 @@ public class ListaNumeros
         }
         System.out.println();
         
+        //falta invertir
         
+        
+        
+        System.out.println("---toArray2D() ---");
+         int[][] raggedArray = lista.toArray2D();
+        for(int i = 0; i < raggedArray.length; i++){
+            for(int j = 0; j < raggedArray[i].length; j++){
+                System.out.printf("%8d",raggedArray[i][j]);
+            }
+            System.out.println();
+        }
         
         
         
