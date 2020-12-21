@@ -165,7 +165,7 @@ public class ListaNumeros
             for (int i = numero + 1; i < pos; i++){
             listaNumeros[i - 1] = listaNumeros[i];
             }
-            pos++;
+            pos--;
         } 
     }
          
@@ -183,7 +183,7 @@ public class ListaNumeros
      */
     public void invertir(int n) {
          
-
+        
     }
 
    
